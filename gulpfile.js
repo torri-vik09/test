@@ -4,6 +4,7 @@
 var path = {
     build: {
         html: 'assets/build/',
+        temp: 'assets/build/templates',
         js: 'assets/build/js/',
         css: 'assets/build/css/',
         img: 'assets/build/img/',
@@ -11,6 +12,7 @@ var path = {
     },
     src: {
         html: 'assets/src/*.pug',
+        temp: 'assets/src/templates/inner-page.pug',
         js: 'assets/src/js/main.js',
         style: 'assets/src/style/main.scss',
         img: 'assets/src/img/**/*.*',
@@ -18,6 +20,7 @@ var path = {
     },
     watch: {
         html: 'assets/src/**/*.pug',
+        temp: 'assets/src/**/*.pug',
         js: 'assets/src/js/**/*.js',
         css: 'assets/src/style/**/*.scss',
         img: 'assets/src/img/**/*.*',
@@ -66,6 +69,16 @@ gulp.task('html:build', function () {
         .pipe(rigger()) // импорт вложений
         .pipe(pug({pretty: true}))
         .pipe(gulp.dest(path.build.html)) // выкладывание готовых файлов
+        .pipe(webserver.reload({stream: true})); // перезагрузка сервера
+});
+
+// сбор html шаблонов
+gulp.task('temp:build', function () {
+    return gulp.src(path.src.temp) // выбор всех pug файлов по указанному пути
+        .pipe(plumber()) // отслеживание ошибок
+        .pipe(rigger()) // импорт вложений
+        .pipe(pug({pretty: true}))
+        .pipe(gulp.dest(path.build.temp)) // выкладывание готовых файлов
         .pipe(webserver.reload({stream: true})); // перезагрузка сервера
 });
 
@@ -142,6 +155,7 @@ gulp.task('build',
     gulp.series('clean:build',
         gulp.parallel(
             'html:build',
+            'temp:build',
             'css:build',
             'js:build',
             'fonts:build',
@@ -153,6 +167,7 @@ gulp.task('build',
 // запуск задач при изменении файлов
 gulp.task('watch', function () {
     gulp.watch(path.watch.html, gulp.series('html:build'));
+    gulp.watch(path.watch.temp, gulp.series('temp:build'));
     gulp.watch(path.watch.css, gulp.series('css:build'));
     gulp.watch(path.watch.js, gulp.series('js:build'));
     gulp.watch(path.watch.img, gulp.series('image:build'));

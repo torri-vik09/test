@@ -2,11 +2,17 @@
 $pink: #eb4d86;
 $blue: #009ff4;
 $dark: #000;
-$gray: #ECECEC;
+$gray: #f4f5f6;
 $green: #74c241;
 $red: #FF3824;
+$yellow: #ffdd62;
+$orange: #fc551f;
 $grid-gutter-width: 40px;
 
 $container-max-widths: (
+        md: 760px,
+        lg: 960px,
         xl: 1020px
 );
+
+

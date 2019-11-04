@@ -1,0 +1,59 @@
+doctype html
+html(lang="ru")
+    head
+        include head-inner
+    body
+        include header
+        section.content.bg-gray
+            .container
+                .link-return.d-inline-block
+                    a(href="#")
+                        i.fas.fa-chevron-left
+                        | Личный раздел
+                .content-wrap
+                    h1.font-weight-bold Вакансии и отклики
+                        img.tool-info(src='/img/info.svg', data-container='body', data-toggle='popover', data-placement='top', data-content='Вакансии и отклики')
+                    .btn-wrap
+                        a.bnt.btn-success.font-weight-bold.btn-item(href="#") Создать вакансию
+                        span.bnt-link
+                            a(href="#modal", data-toggle='modal') Доступно 20 из 942 публикаций
+                        a.link-info-content(href='#')
+                            | Только размещенные
+                            i.fas.fa-chevron-right
+                            img(src="/img/search.svg")
+                    .content-user
+                        .info-user
+                            a(href='#')
+                                i.fas.fa-chevron-down
+                                | Андрей Боровик
+                            img.tool-info(src='/img/info.svg', data-container='body', data-toggle='popover', data-placement='top', data-content='Андрей Боровик')
+                            span 4
+                        .card
+                            .row
+                                .col-md-10.col-sm-12
+                                    p.card-title
+                                        a(href='#') Артист по работе с клиентами
+                                        | , 15000 грн*
+                                    p.card-address Днепр
+                                    p.card-premium
+                                        a.btn.btn-warning.btn-premium(href="#") Premium до 22 октября
+                                        span 10 октября – 10 ноября
+                                    ul.nav
+                                        li.nav-item
+                                            a.nav-link(href='#') Подобрать резюме
+                                        li.nav-item
+                                            a.nav-link(href='#') Продлить Premium
+                                        li.nav-item
+                                            a.nav-link(href='#') Обновить дату публикации
+                                        li.nav-item
+                                            a.nav-link(href='#') Еще
+                                                i.fas.fa-chevron-down
+                                .col-md-2.col-sm-4
+                                    p.response
+                                        span.count-response 378
+                                        span.text-response &nbspоткликов
+                                        span.new-response 23
+
+        include footer
+        include modal
+script(src='../js/main.min.js')

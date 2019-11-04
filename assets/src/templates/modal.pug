@@ -1,0 +1,27 @@
+#modal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='modalContent', aria-hidden='true')
+    .modal-dialog.modal-dialog-centered(role='document')
+        .modal-content
+            .modal-header#modalContent
+                button.close(type='button', data-dismiss='modal', aria-label='Close')
+                    span(aria-hidden='true') &times;
+            .modal-body
+                .modal-body-items
+                    p
+                        span Standard
+                        span.index 14 из 23
+                    p
+                        span Standard Plus возобновляемая
+                            span.index.index-inl До 13.09.18
+                        span.index 81 из 456
+                    p
+                        span Premium
+                        span.index 10 из 128
+                    p
+                        span Анонимная
+                        span.index 10 из 13
+                .modal-body-link
+                    ul.nav
+                        li
+                            a(href='#') Подробнее о публикациях
+                        li
+                            a(href='#') Купить публикации от 249 грн

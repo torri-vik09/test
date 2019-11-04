@@ -1,16 +1,17 @@
 section.content.bg-gray
-    div.container
-        div.link-return.d-inline-block
+    .container
+        .link-return.d-inline-block
             a(href="#")
                 i.fas.fa-chevron-left
                 | Личный раздел
-        div.content-wrap
+        .content-wrap
             h1.font-weight-bold Вакансии и отклики
+                img.tool-info(src='/img/info.svg', data-container='body', data-toggle='popover', data-placement='top', data-content='Вакансии и отклики')
             p.font-weight-bold У вас еще нет вакансий.
-            div.text-content
+            .text-content
                 p Чтобы начать активный поиск сотрудников, создайте ваши вакансии. Помните! Большинство соискателей не размещают резюме на сайте, а отправляют их прямо на найденные вакансии. Поэтому размещайте вакансии, и вы значительно увеличите шансы найти сотрудника.
-            div.btn-wrap
+            .btn-wrap
                 a.bnt.btn-success.font-weight-bold.btn-item(href="#") Создать вакансию
                 span.bnt-link
                     | В наличии&nbsp
-                    a(href="#") 1 публикация
+                    a(href="/templates/inner-page.html") 1 публикация

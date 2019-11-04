@@ -1,17 +1,11 @@
 footer
-    div.container
-        div.row
-            div.col-6
-                div.lang-wrap
+    .container
+        .row
+            .col-md-8.col-sm-12
+                p
                     a.lang-item.d-inline-block(href='#') Русский
                         i.fas.fa-chevron-down
-            div.col-6.text-right
-                a.link-info.btn-item(href='#')
-                    | Соискателю
-                    i.fas.fa-chevron-right
-        div.row
-            div.col-12
-                div.footer-menu
+                .footer-menu
                     ul.nav
                         li.nav-item
                             a.nav-link(href='#') Ресурсы
@@ -23,17 +17,20 @@ footer
                             a.nav-link(href='#') Новости сайта
                         li.nav-item
                             a.nav-link(href='#') Условия использования
-        div.row
-            div.col-12
+
                 p.copyright © 2006–2016 Work.ua. Сайт поиска работы №1 в Украине.
-        div.footer-bottom
-            div.row.justify-content-between
-                div.col-5
+            .col-md-4.col-sm-12
+                a.link-info.btn-item(href='#')
+                    | Соискателю
+                    i.fas.fa-chevron-right
+        .footer-bottom
+            .row.justify-content-between
+                .col-md-5.col-sm-12
                     p Сделано в компании «
                         a.company(href='https://www.reactor.com.ua/', target='_blank') Реактор
                         | ».
-                div.col-7
-                    ul.nav.justify-content-end
+                .col-md-7.col-sm-12
+                    ul.nav
                         li.nav-item
                             a.nav-link(href='https://www.education.ua/', target='_blank') Образование
                         li.nav-item
@@ -42,8 +39,3 @@ footer
                             a.nav-link(href='https://www.ratatype.com/ru/?lang=ru', target='_blank') Клавиатурный тренажер
                         li.nav-item
                             a.nav-link(href='https://www.ratatype.com/', target='_blank') Typing tutor
-
-
-
-
-script(src='js/main.min.js')
